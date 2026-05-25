@@ -35,14 +35,14 @@ export interface AboutData {
   title: string;
   showCurtain: boolean; // Show decorative curtains in Hero section
   topText?: string; // Optional: small text above name/title in Hero section
-  highlightsFromTopText: string[]; // Words from topText to highlight (optional)
+  highlightsFromTopText?: string[]; // Words from topText to highlight (optional)
   // Hero Section
   hero: {
     headline: string;
     highlightedWords?: string[]; // Optional: words in headline to highlight
     primaryCtaText: string;
     primaryCtaLink: string;
-    secondaryCtaText: string;
+    secondaryCtaText?: string;
     secondaryCtaLink: string;
     heroPara: string;
   };
