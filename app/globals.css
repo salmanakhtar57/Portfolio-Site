@@ -1,0 +1,186 @@
+@import "https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=League+Spartan:wght@100..900&display=swap";
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: 14 5 22;
+  --primary: #7b2cbf;
+  --primary-light: #7a2cbf0f;
+  --primary-dark: #4a148c;
+  --black-light: #666666;
+  --glass: rgba(255, 255, 255, 0.05);
+
+  --font-serif: "Alegreya", serif;
+  --font-geist-sans: "League Spartan", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0516;
+    --foreground: 237 237 237;
+    --black-light: #99a1af;
+    --primary-light: #7a2cbf36;
+  }
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-black-light: var(--black-light);
+  --color-glass: var(--glass);
+
+
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-serif);
+}
+
+body {
+  background: var(--background);
+  color: rgb(var(--foreground));
+  font-family: var(--font-geist-sans);
+  margin: 0;
+  padding: 0;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "League Spartan", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes loading-bar-short {
+  0%,
+  100% {
+    transform: translateX(-20%);
+    width: 40%;
+  }
+  50% {
+    transform: translateX(110%);
+    width: 55%;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.8s linear infinite;
+}
+
+.animate-loading-bar-short {
+  animation: loading-bar-short 1.4s ease-in-out infinite;
+}
+
+.animate-loading-bar-medium {
+  animation: loading-bar-short 1.8s ease-in-out infinite;
+}
+
+.animate-loading-bar-long {
+  animation: loading-bar-short 2s ease-in-out infinite;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 16px rgb(var(--foreground) / 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow:
+    0 6px 20px rgb(var(--foreground) / 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.glass-btn-active {
+  background: rgba(123, 44, 191, 0.75);
+  border-color: rgba(123, 44, 191, 0.5);
+  box-shadow:
+    0 4px 20px rgb(var(--foreground) / 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Custom scrollbar */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  opacity: 1;
+  background: var(--primary-dark);
+}
+
+.overflow-y-auto {
+  scrollbar-color: var(--primary) transparent;
+  scrollbar-width: thin;
+}
+
+.shadow-sm {
+  --tw-shadow:
+    0 1px 3px 0 rgb(var(--foreground) / 0.5),
+    0 1px 2px -1px rgb(var(--foreground) / 0.1);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
