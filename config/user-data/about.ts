@@ -88,15 +88,16 @@ export interface AboutData {
     email: string;
     phone?: string; // Optional: can be omitted for privacy
     location: string;
-    preferredMethod: "email" | "phone" | "linkedin" | "whatsapp";
+    preferredMethod: "email" | "phone" | "linkedin";
   };
 }
 
 export const socialLinks = {
-  linkedin: "https://www.linkedin.com/in/miss-kniz",
-  instagram: "https://www.instagram.com/miss-kniz",
-  github: "https://www.github.com/miss-kniz",
-  medium: "https://medium.com/@miss-kniz",
+  linkedin: "https://www.linkedin.com/in/salman-akhtar-09a210198/",
+  instagram: "https://www.instagram.com/salman.code",
+  github: "https://github.com/salmanakhtar57",
+  medium: "https://salman1234.medium.com/",
+  x: "https://x.com/salman_codes"
 };
 
 // PORTFOLIO DATA
@@ -107,101 +108,94 @@ export const portfolioForJob = true; // can be for freelancing the service secti
 
 const aboutData: AboutData = {
   // ---------- Basic Info ----------
-  name: "Mehak Fatima Naqvi - Miss Kniz",
-  title: "Full Stack Developer",
+  name: "Salman Akhtar",
+  title: "Backend Engineer",
   showCurtain: true, // Set to false to hide decorative curtains in Hero section
 
-  topText: "Available for Remote Opportunities",
-  highlightsFromTopText: ["Remote Opportunities"],
+  // topText: "Available for Remote Opportunities",
+  // highlightsFromTopText: ["Remote Opportunities"],
 
   // ---------- Hero Section ----------
   hero: {
-    headline: "Turning Ideas Into High Performing Digital Products",
-    highlightedWords: ["Ideas Into", "Digital Products"], // Optional: words in headline to highlight
-    primaryCtaText: "View Resume", // e.g., "Hire Me", "Download Resume"
+    headline: "Building Scalable Backend Systems for Modern Web Applications",
+    highlightedWords: ["Scalable Backend", "Web Applications"],
+    primaryCtaText: "Download Resume",
     primaryCtaLink:
       "https://docs.google.com/document/d/1RWiaPjxjxr_cjxwo3uDriRe3rav1rmTasqtgRGrpz80/edit?usp=sharing",
-    secondaryCtaText: "Book a Call",
+    // secondaryCtaText: "Book a Call",
     secondaryCtaLink: "https://calendar.app.google/fpRU2qDXNfbg4BSK8",
     heroPara:
-      "I Help Startups and freelance teams Ship Fast, Scalable & High-Converting Web Apps", // can include escape char \n for line breaks if needed
+      "Python Backend Developer specializing in Django, REST APIs, AI, and scalable backend architecture for startups and growing products.",
   },
 
   // ---------- About Me Section ----------
   aboutMe: {
     heading: {
-      normalText: "From dusty PC",
-      highlightedText: "to strong {Developer}",
+      normalText: "From curious learner",
+      highlightedText: "to backend {Developer}",
     },
     paragraphs: [
-      "I'm Mehak, a Frontend Engineer who genuinely enjoys the puzzle of building things that work beautifully. Two years in, and I still get excited when a performance fix shreds load time or a UI finally clicks into place.",
-      "When I'm not coding, you'll find me watching K-dramas, exploring nature, or doing what I love most, sitting on the rooftop at evening with a cup of milk tea, watching the world slow down. That quiet is where my best ideas come from.",
+      "I'm Salman, a Python Backend Developer who enjoys building backend systems and solving real-world problems. I like working with APIs, databases, and backend architecture, especially when improving performance or creating clean and scalable solutions.",
+      "When I'm not coding, I enjoy reading books about technology, business, and self-growth, attending different events, and learning from new people and experiences. I also enjoy spending quiet evenings with a cup of tea, thinking about ideas, and sharing my thoughts and learnings online."
     ],
     skills: ["React", "TypeScript", "TailwindCSS", "Node.js", "Next.js"],
     interests: ["Open Source", "Tech Writing", "UI/UX Design"],
     highlightedAboutRole: [
-      "Frontend Engineer",
-      "PERN-stack Developer",
-      "React & Next.js Specialist",
+      "Python Backend Engineer",
+      "Scalable API Developer",
+      "Django / FastAPI Developer",
     ],
     aboutCTA: "View my Journey",
-    aboutSecondaryCTA: {
-      text: "Connect on",
-      icon: "ri-linkedin-box-fill",
-      onClick: () => {
-        window.open(socialLinks.linkedin, "_blank");
-      },
-    },
-    personalStory: {
-      id: 1,
-      title: "From Intermediate Student to First Tech Job",
-      description:
-        "A 4-minute read about resilience, loans, factory work, and breaking into tech.",
-      imageUrl: "/photo-gallery/journey.png", // or any image you want
-      link: "https://medium.com/@mehak313naqvi/from-intermediate-student-to-first-tech-job-the-journey-which-still-hasnt-ended-e77a47b28748",
-    },
+    // aboutSecondaryCTA: {
+    //   text: "Connect on",
+    //   icon: "ri-linkedin-box-fill",
+    //   onClick: () => {
+    //     window.open(socialLinks.linkedin, "_blank");
+    //   },
+    // },
   },
 
   // ---------- Work Experience ----------
   experience: [
     {
-      role: "Frontend-Focused Full-Stack Developer",
-      company: "ThinkBuilt Solutions - Remote",
+      role: "Python Backend Developer",
+      company: "WanderCode - Lahore, Pakistan",
       description:
-        "Next.js, TypeScript, Node.js, Prisma, PostgreSQL, React, tailwindCSS \n Built Leadlyft, cherished-Lives and Physemp",
-      period: "Mar 2025 - Present",
+        "Building scalable backend systems using Python and Django, developing RESTful APIs, AI-driven features, third-party integrations, and optimized database architectures for modern web applications.",
+      period: "Dec 2025 - Present",
     },
     {
-      role: "Frontend Developer",
-      company: "Prep Plate (SaaS Product) - Contract",
+      role: "Python Developer",
+      company: "DevPandas - Lahore, Pakistan",
       description:
-        "Built responsive meal planning UI using React and Redux Toolkit.",
-      period: "Dec 2024 - Mar 2025",
+        "Worked on Python development projects, building robust backend solutions and implementing efficient APIs for various client applications.",
+      period: "Dec 2024 - Nov 2025",
     },
     {
-      role: "Frontend Intern",
-      company: "CodeAlpha - Remote",
-      description: "UI responsiveness & usability fixes",
-      period: "Oct 2024 - Nov 2024",
+      role: "Back End Developer",
+      company: "Get AI Chatbots - Lahore, Pakistan",
+      description:
+        "Developed AI-powered chatbot solutions, implemented RESTful APIs, and integrated LangChain for advanced conversational AI capabilities.",
+      period: "Nov 2024 - Dec 2024",
     },
   ],
   // ---------- Education ----------
   education: [
     {
       degree: "BSCS",
-      institution: "Virtual University",
-      description: "Software engineering and computer architectures.",
-      period: "2023 - 2027", // Optional
+      institution: "COMSATS University",
+      description: "Computer Science",
+      period: "2019 - 2023", // Optional
     },
   ],
 
   // ---------- Personal Interests/Hobbies ----------
   hobbies: [
-    { label: "Sketching", link: "" },
-    { label: "UX research", link: "" },
-    { label: "Experimenting with AI tools", link: "" },
+    { label: "Writing", link: "" },
+    { label: "Reading Books", link: "" },
+    { label: "Exploring Agentic AI", link: "" },
     { label: "Learning new tech", link: "" },
-    { label: "Scrolling LinkedIn", link: "https://www.linkedin.com/miss-kniz" },
+    { label: "Scrolling LinkedIn", link: "https://www.linkedin.com/in/salman-akhtar-09a210198/" },
   ],
 
   // ---------- Social Media Links ----------
@@ -224,19 +218,20 @@ const aboutData: AboutData = {
     },
     {
       platform: "Twitter",
+      url: socialLinks["x"],
       icon: "ri-twitter-x-fill",
     },
     {
       platform: "Instagram",
-      // url: socialLinks["instagram"],
+      url: socialLinks["instagram"],
       icon: "ri-instagram-fill",
     },
   ],
 
   // ---------- Contact Information ----------
   contact: {
-    email: "mehak313naqvi@gmail.com",
-    location: "Pakistan (Available for remote roles across the UK and Europe)",
+    email: "salmanmaken10@gmail.com",
+    location: "Lahore, Pakistan",
     preferredMethod: "linkedin", // Options: 'email' | 'phone' | 'linkedin' | 'whatsapp'
   },
 };
