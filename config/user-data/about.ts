@@ -120,8 +120,7 @@ const aboutData: AboutData = {
     headline: "Building Scalable Backend Systems for Modern Web Applications",
     highlightedWords: ["Scalable Backend", "Web Applications"],
     primaryCtaText: "Download Resume",
-    primaryCtaLink:
-      "https://docs.google.com/document/d/1RWiaPjxjxr_cjxwo3uDriRe3rav1rmTasqtgRGrpz80/edit?usp=sharing",
+    primaryCtaLink: "/resume/Salman Akhtar - Software Engineer.pdf",
     // secondaryCtaText: "Book a Call",
     secondaryCtaLink: "https://calendar.app.google/fpRU2qDXNfbg4BSK8",
     heroPara:

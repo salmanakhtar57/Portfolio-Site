@@ -114,7 +114,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
                     <StaggerItem>
                       <a
                         href={hero.primaryCtaLink}
-                        target="_blank"
+                        download
                         rel="noopener noreferrer"
                       >
                         <Button variant="primary">{hero.primaryCtaText}</Button>
