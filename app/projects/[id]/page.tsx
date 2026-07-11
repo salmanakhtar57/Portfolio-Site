@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import Heading from "@/components/ui/Heading";
 import { SimplePara } from "@/components/ui/SubHeadingContainer";
 import { highlightTechs, projects } from "@/config/user-data/projects";
+import aboutData from "@/config/user-data/about";
 import Link from "next/link";
 
 import { Metadata } from "next";
@@ -14,6 +15,7 @@ import {
   TextReveal,
 } from "@/components/motion/Reveal";
 import Image from "next/image";
+import { BASE_URL } from "@/app/layout";
 
 type Props = {
   params: { id: string };
@@ -31,12 +33,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const previewImage = project.previewImage || "/default-og.png";
 
   return {
-    title: `${project.title} | Miss Kniz Portfolio`,
+    title: `${project.title} | ${aboutData.name} Portfolio`,
     description: project.description,
     openGraph: {
       title: project.title,
       description: project.description,
-      url: `https://mehak-naqvi.vercel.app/projects/${project.id}`,
+      url: `${BASE_URL}/projects/${project.id}`,
       images: [
         {
           url: previewImage,

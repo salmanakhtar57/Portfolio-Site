@@ -1,13 +1,16 @@
 import { highlightTechs } from "@/config/user-data/projects";
+import aboutData from "@/config/user-data/about";
 import Heading from "./Heading";
-import { NavigationArrow } from "phosphor-react";
+import { ArrowRight, NavigationArrow } from "phosphor-react";
 import { useRouter } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 
 interface ProjectCardProps {
   title: string;
   description?: string;
-  imageUrl: string;
+  imageUrl?: string;
+  icon?: React.ElementType;
+  iconColor?: string;
   technologies: string[];
   liveUrl?: string;
   id: string;
@@ -19,6 +22,8 @@ export default function ProjectCard({
   title,
   description,
   imageUrl,
+  icon: Icon,
+  iconColor = "#7b2cbf",
   technologies,
   liveUrl,
   id,
@@ -27,24 +32,85 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const router = useRouter();
   const reduceMotion = useReducedMotion() ?? false;
+  const externalUrl = liveUrl || githubUrl;
 
-  const navigateToProject = (id: string) => {
+  const navigateToCaseStudy = () => {
     onNavigate?.();
-
     setTimeout(() => {
       router.push(`/projects/${id}`);
     }, 150);
   };
 
+  // Projects without a screenshot have no internal case-study page —
+  // "View Details" sends them straight to the live site / repo instead,
+  // and the card itself isn't clickable.
+  if (!imageUrl) {
+    return (
+      <motion.div
+        className="relative flex h-full flex-col rounded-xl border border-black-light/10 bg-glass p-6 shadow-sm transition-colors duration-300 hover:border-primary/40"
+        whileHover={reduceMotion ? undefined : { y: -4 }}
+        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {Icon && (
+          <div
+            className="flex h-14 w-14 items-center justify-center rounded-2xl"
+            style={{ backgroundColor: `${iconColor}1a` }}
+          >
+            <Icon size={28} weight="duotone" color={iconColor} />
+          </div>
+        )}
+
+        <Heading as="h4" normalText={title} center={false} className="mt-4" />
+
+        {description && (
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-black-light">
+            {description}
+          </p>
+        )}
+
+        {technologies.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-2">
+            {technologies.map((tech, index) => {
+              const isHighlight = highlightTechs.includes(tech);
+              return (
+                <span
+                  key={index}
+                  className={`text-xs font-medium px-2 py-1 rounded-md ${
+                    isHighlight
+                      ? "bg-primary-light text-primary"
+                      : "bg-black-light/10 text-black-light"
+                  }`}
+                  title={tech}
+                >
+                  {tech}
+                </span>
+              );
+            })}
+          </div>
+        )}
+
+        {externalUrl && (
+          <a
+            href={externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-medium text-primary hover:underline"
+          >
+            View Details <ArrowRight weight="bold" size={14} />
+          </a>
+        )}
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       className="group relative bg-glass rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden h-full flex flex-col items-start cursor-pointer"
-      onClick={() => navigateToProject(id)}
+      onClick={navigateToCaseStudy}
       whileHover={reduceMotion ? undefined : { y: -4 }}
       whileTap={reduceMotion ? undefined : { scale: 0.995 }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
     >
-      {/* Image */}
       <div className="relative w-full h-fit px-2 m-2 overflow-hidden rounded-lg group mx-auto">
         {(liveUrl || githubUrl) && (
           <a
@@ -62,7 +128,7 @@ export default function ProjectCard({
         <div className="overflow-hidden rounded-xl">
           <img
             src={imageUrl}
-            alt={`Mehak Fatima naqvi (miss kniz)'s Project ${title}`}
+            alt={`${aboutData.name}'s Project ${title}`}
             className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
@@ -80,24 +146,26 @@ export default function ProjectCard({
         )}
 
         {/* Technologies as small text chips */}
-        <div className="flex gap-2 mb-1 flex-wrap">
-          {technologies.map((tech, index) => {
-            const isHighlight = highlightTechs.includes(tech);
-            return (
-              <span
-                key={index}
-                className={`text-xs font-medium px-2 py-1 rounded-md ${
-                  isHighlight
-                    ? "bg-primary-light text-primary"
-                    : "bg-black-light/10 text-black-light"
-                }`}
-                title={tech}
-              >
-                {tech}
-              </span>
-            );
-          })}
-        </div>
+        {technologies.length > 0 && (
+          <div className="flex gap-2 mb-1 flex-wrap">
+            {technologies.map((tech, index) => {
+              const isHighlight = highlightTechs.includes(tech);
+              return (
+                <span
+                  key={index}
+                  className={`text-xs font-medium px-2 py-1 rounded-md ${
+                    isHighlight
+                      ? "bg-primary-light text-primary"
+                      : "bg-black-light/10 text-black-light"
+                  }`}
+                  title={tech}
+                >
+                  {tech}
+                </span>
+              );
+            })}
+          </div>
+        )}
 
         <div className="mb-4 flex items-center justify-between w-full">
           <span className="text-xs font-medium bg-primary text-white rounded-md p-1 flex items-start gap-1">

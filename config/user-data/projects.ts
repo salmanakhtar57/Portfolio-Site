@@ -1,17 +1,40 @@
-import {
-  CaseStudy,
-  cherishedLivesCaseStudy,
-} from "./case-study/cherished-lives";
-import { leadlyftCaseStudy } from "./case-study/leadlyft";
-import { likhSpireCaseStudy } from "./case-study/likhSpire";
-import { prepAndPlateCaseStudy } from "./case-study/prep&plate";
+import { Notebook as NotebookIcon, SquaresFour as SquaresFourIcon } from "phosphor-react";
+
+interface CaseStudySection {
+  title: string;
+  body: string;
+}
+
+interface Architecture {
+  description: string;
+  structure: string;
+}
+
+export interface CaseStudy {
+  bgImageUrl?: string;
+  introduction?: string;
+  overview?: string;
+  overviewImage?: string;
+  architecture?: Architecture;
+  challenges?: CaseStudySection[];
+  process?: CaseStudySection[];
+  features?: CaseStudySection[];
+  featuresImage?: string;
+  outcomes?: {
+    value: string;
+    desc: string;
+  }[];
+  reflection?: string;
+}
 
 export interface ProjectItem {
   id: string;
   title: string;
   description: string;
   categories: string[];
-  imageUrl: string;
+  imageUrl?: string;
+  icon?: React.ElementType;
+  iconColor?: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -47,121 +70,41 @@ export const TECH_STACK = {
   pusher: "Pusher",
   bootstrap: "Bootstrap",
   shadcn: "Shadcn UI",
+  python: "Python",
+  django: "Django",
+  "rest framework": "Rest Framework",
+  fastapi: "FastAPI",
 };
 
 export const projects: ProjectItem[] = [
   {
-    id: "leadlyft",
-    title: "LeadLyft",
-    categories: ["Full-stack", "SaaS"],
-    imageUrl: "projects/3.webp",
+    id: "notes-app",
+    title: "Notes App",
+    categories: [],
+    icon: NotebookIcon,
+    iconColor: "#6366f1",
     technologies: [
-      TECH_STACK.react,
-      TECH_STACK["redux toolkit"],
-      TECH_STACK["rtk query"],
-      TECH_STACK.pusher,
-      TECH_STACK.css,
-      TECH_STACK.prisma,
-      TECH_STACK.mui,
-      TECH_STACK.tailwind,
-      TECH_STACK.nodejs,
-      TECH_STACK.express,
-    ],
-    liveUrl: "https://app.leadlyft.com",
-    githubUrl: undefined,
-    previewImage: "projects/leadlyft-preview-v3.png",
-    isClientProject: true,
-    description:
-      "A coaching platform for executives to improve work and life performance.",
-    role: "Frontend-focused full-stack Developer",
-    context: "Website development",
-    period: "Early 2025",
-    caseStudy: leadlyftCaseStudy,
-  },
-  {
-    id: "cherished-lives",
-    title: "Cherished Lives",
-    categories: ["Frontend", "Figma to Code"],
-    imageUrl: "projects/cherished-lives.png",
-    technologies: [
-      TECH_STACK["next.js"],
-      TECH_STACK.typescript,
-      TECH_STACK.tailwind,
-      TECH_STACK.shadcn,
-      TECH_STACK.react,
-    ],
-    liveUrl:
-      "https://app.cherishedlives.com/dashboard/profiles/6981db020d6f16bc1fa6dc15",
-    githubUrl: undefined,
-    previewImage: "projects/cherished-lives-preview.png",
-    isClientProject: true,
-    description:
-      "An online memorial platform where users can keep the memories of loved ones.",
-    role: "Frontend Developer",
-    context: "Website development",
-    period: "Late 2025",
-    caseStudy: cherishedLivesCaseStudy,
-  },
-
-  {
-    id: "prep-and-plate",
-    title: "Prep & Plate",
-    categories: ["Frontend", "SaaS"],
-    imageUrl: "projects/prep-plate.webp",
-    previewImage: "projects/prep-plate-preview.png",
-    technologies: [
-      TECH_STACK.tailwind,
-      TECH_STACK["redux toolkit"],
-      TECH_STACK["rtk thunks"],
-      TECH_STACK.react,
-    ],
-    role: "Responsive Frontend",
-    period: "Late 2024",
-    context: "Desktop → Mobile UX",
-    description:
-      "A web app that helps users plan daily meals and recipes easily.",
-    caseStudy: prepAndPlateCaseStudy,
-  },
-  {
-    id: "linkspire",
-    title: "LinkSpire",
-    categories: ["Full-stack"],
-    imageUrl: "projects/likhspire.webp",
-    technologies: [
-      TECH_STACK.html,
-      TECH_STACK.bootstrap,
+      TECH_STACK.python,
+      TECH_STACK.django,
+      TECH_STACK["rest framework"],
       TECH_STACK.javascript,
-      TECH_STACK.nodejs,
-      TECH_STACK.express,
-      TECH_STACK.postgresql,
-      "REST API",
-      "UI design",
     ],
-    liveUrl: undefined,
-    githubUrl:
-      "https://github.com/miss-kniz/LikhSpire/blob/main/screenshots/demo.gif",
-    previewImage: "projects/likhspire-preview.png",
-    isClientProject: false,
-    role: "Full-stack Developer",
-    period: "Mid 2025",
-    context: "Blogging platform",
+    githubUrl: "https://github.com/salmanakhtar57/Notes-App",
     description:
-      "A blogging platform where users can write, edit, and share posts.",
-    caseStudy: likhSpireCaseStudy,
+      "A simple full-stack notes application built with Django REST Framework, allowing users to create, view, update, and delete notes using a clean and responsive frontend.",
+  },
+  {
+    id: "onespace",
+    title: "OneSpace",
+    categories: [],
+    icon: SquaresFourIcon,
+    iconColor: "#14b8a6",
+    technologies: [TECH_STACK.python, TECH_STACK.fastapi],
+    githubUrl: "https://github.com/salmanakhtar57/OneSpace",
+    description:
+      "A simple full-stack personal productivity application built with FastAPI, helping users organize journals, habits, tasks, and daily insights in one place through a clean, scalable, and modular backend architecture.",
   },
 ];
 
 // Highlight important techs
-export const highlightTechs = [
-  TECH_STACK.react,
-  TECH_STACK.prisma,
-  TECH_STACK["next.js"],
-  TECH_STACK["redux toolkit"],
-  TECH_STACK["rtk query"],
-  TECH_STACK.nodejs,
-  TECH_STACK.postgresql,
-  TECH_STACK.express,
-  TECH_STACK.typescript,
-  TECH_STACK["express js"],
-  "UI design",
-];
+export const highlightTechs: string[] = [TECH_STACK.django, TECH_STACK.fastapi];
