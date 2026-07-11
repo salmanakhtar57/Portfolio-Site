@@ -137,8 +137,8 @@ const aboutData: AboutData = {
       highlightedText: "to backend {Developer}",
     },
     paragraphs: [
-      "I'm Salman, a Python Backend Developer who enjoys building backend systems and solving real-world problems. I like working with APIs, databases, and backend architecture, especially when improving performance or creating clean and scalable solutions.",
-      "When I'm not coding, I enjoy reading books about technology, business, and self-growth, attending different events, and learning from new people and experiences. I also enjoy spending quiet evenings with a cup of tea, thinking about ideas, and sharing my thoughts and learnings online."
+      "I'm Salman, a Python Backend Developer who enjoys building backend systems and solving real world problems. I like working with APIs, databases, and backend architecture, especially when improving performance or creating clean and scalable solutions.",
+      "When I'm not coding, I enjoy reading books, attending different events, and learning from new people and experiences. I also enjoy spending quiet evenings with a cup of tea, thinking about ideas, and sharing my thoughts and learnings online."
     ],
     skills: ["React", "TypeScript", "TailwindCSS", "Node.js", "Next.js"],
     interests: ["Open Source", "Tech Writing", "UI/UX Design"],
