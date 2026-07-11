@@ -82,7 +82,7 @@ const SkillsSection = forwardRef<HTMLElement, object>(
                           : "glass-btn text-black-light"
                       }`}
                     >
-                      {capitalFirstLetter(category)}
+                      {category === "ai" ? "AI" : capitalFirstLetter(category)}
                     </button>
                   </StaggerItem>
                 ))}

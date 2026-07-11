@@ -279,6 +279,51 @@ export function ReduxIcon() {
   );
 }
 
+function createMonogramIcon(
+  label: string,
+  bg: string,
+  fg: string = "#ffffff",
+): () => JSX.Element {
+  const fontSize = label.length > 2 ? 7 : 9;
+
+  return function MonogramIcon(): JSX.Element {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={ICON_SIZE.width}
+        height={ICON_SIZE.height}
+        viewBox="0 0 24 24"
+      >
+        <rect width="24" height="24" rx="6" fill={bg} />
+        <text
+          x="12"
+          y="13"
+          textAnchor="middle"
+          dominantBaseline="middle"
+          fontFamily="Arial, Helvetica, sans-serif"
+          fontWeight="700"
+          fontSize={fontSize}
+          fill={fg}
+        >
+          {label}
+        </text>
+      </svg>
+    );
+  };
+}
+
+export const DjangoIcon = createMonogramIcon("Dj", "#092e20");
+export const DjangoRestIcon = createMonogramIcon("RF", "#a30000");
+export const FlaskIcon = createMonogramIcon("Fl", "#1c1c1c");
+export const FastAPIIcon = createMonogramIcon("FA", "#009688");
+export const Html5Icon = createMonogramIcon("H5", "#e34f26");
+export const Css3Icon = createMonogramIcon("C3", "#1572b6");
+export const MongoDBIcon = createMonogramIcon("Mo", "#47a248");
+export const MySQLIcon = createMonogramIcon("My", "#00758f");
+export const SQLiteIcon = createMonogramIcon("Li", "#003b57");
+export const VSCodeIcon = createMonogramIcon("VS", "#007acc");
+export const PostmanIcon = createMonogramIcon("Pm", "#ff6c37");
+
 export function ReactIcon() {
   return (
     <svg
