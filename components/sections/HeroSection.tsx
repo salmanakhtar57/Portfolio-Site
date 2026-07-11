@@ -121,20 +121,6 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
                     </a>
                   </StaggerItem>
                 )}
-
-                {hero.secondaryCtaText && hero.secondaryCtaLink && (
-                  <StaggerItem>
-                    <a
-                      href={hero.secondaryCtaLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button variant="secondary">
-                        {hero.secondaryCtaText}
-                      </Button>
-                    </a>
-                  </StaggerItem>
-                )}
               </Stagger>
             </Reveal>
           </div>

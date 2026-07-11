@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Heading from "../ui/Heading";
-import { MapPin, Phone, Envelope, Calendar, Check, X } from "phosphor-react";
+import { MapPin, Phone, Envelope, Check, X } from "phosphor-react";
 import aboutData from "@/config/user-data/about";
 import Input from "../inputs/Input";
 import Textarea from "../inputs/Textarea";
@@ -11,9 +11,7 @@ import SocialLinks from "../ui/SocialLinks";
 import { Reveal, Stagger, StaggerItem } from "../motion/Reveal";
 
 const ContactSection: React.FC = () => {
-  const { contact, hero } = aboutData;
-  const ctaText = hero.secondaryCtaText;
-  const ctaLink = hero.secondaryCtaLink;
+  const { contact } = aboutData;
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -72,7 +70,7 @@ const ContactSection: React.FC = () => {
     {
       name: "email",
       type: "email",
-      placeholder: "Email Address",
+      placeholder: "Your Email",
       required: true,
     },
   ];
@@ -144,7 +142,7 @@ const ContactSection: React.FC = () => {
           {/* RIGHT FORM (unchanged) */}
           <Reveal delay={0.08}>
             <div className="bg-primary-light p-4 rounded-2xl">
-              <h3 className="text-lg font-semibold mb-6">Leave Your Info.</h3>
+              <h3 className="text-lg font-semibold mb-6">Let's work together</h3>
 
               <form className="space-y-2" onSubmit={handleSubmit}>
                 {formFields.map((field) => (
@@ -164,27 +162,12 @@ const ContactSection: React.FC = () => {
                   value={form.message}
                   onChange={handleChange}
                   rows={4}
-                  placeholder="Message"
+                  placeholder="Your Message"
                 />
 
                 {/* Button */}
                 <Button className="w-full" type="submit" disabled={loading}>
                   {loading ? "Sending" : "Send Message"}
-                </Button>
-
-                <div className="flex items-center gap-2 text-black-light">
-                  <div className="h-[0.5px] w-full bg-black-light"></div>
-                  <div>OR</div>
-                  <div className="h-[0.5px] w-full bg-black-light"></div>
-                </div>
-                <Button
-                  className="w-full"
-                  variant="outline"
-                  type="button"
-                  onClick={() => window.open(ctaLink, "_blank")}
-                >
-                  <Calendar size={24} />
-                  {ctaText}
                 </Button>
               </form>
             </div>

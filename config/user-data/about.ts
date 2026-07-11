@@ -42,8 +42,6 @@ export interface AboutData {
     highlightedWords?: string[]; // Optional: words in headline to highlight
     primaryCtaText: string;
     primaryCtaLink: string;
-    secondaryCtaText?: string;
-    secondaryCtaLink: string;
     heroPara: string;
   };
 
@@ -121,8 +119,6 @@ const aboutData: AboutData = {
     highlightedWords: ["Scalable Backend", "Web Applications"],
     primaryCtaText: "Download Resume",
     primaryCtaLink: "/resume/Salman Akhtar - Software Engineer.pdf",
-    // secondaryCtaText: "Book a Call",
-    secondaryCtaLink: "https://calendar.app.google/fpRU2qDXNfbg4BSK8",
     heroPara:
       "Python Backend Developer specializing in FastAPI, Django, DRF, AI, and scalable backend architecture for startups and growing products.",
   },

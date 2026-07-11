@@ -11,7 +11,7 @@ interface ContactModalProps {
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Contact Me">
+    <Modal isOpen={isOpen} onClose={onClose} title="Get In Touch">
       <ContactSection />
     </Modal>
   );
