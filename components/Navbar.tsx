@@ -6,6 +6,7 @@ import { useState, useEffect, RefObject } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowLeft } from "phosphor-react";
 import ContactModal from "./modals/ContactModal";
+import ThemeToggle from "./ui/ThemeToggle";
 
 export type NavbarProps = {
   sectionRefs?: Record<string, RefObject<HTMLElement | null>>;
@@ -136,6 +137,7 @@ export default function Navbar({
                   Back <span className="hidden md:inline-block">to Projects</span>
                 </Button>
               )}
+              <ThemeToggle />
               <Button onClick={() => setIsContactOpen(true)}>Contact</Button>
             </div>
           </div>
