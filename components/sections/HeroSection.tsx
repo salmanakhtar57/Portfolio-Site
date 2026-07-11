@@ -142,7 +142,7 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
                   alt={`Photo of ${name}`}
                   fill
                   sizes="(max-width: 768px) 15rem, 24rem"
-                  className="object-cover"
+                  className="object-cover object-[center_20%]"
                   priority
                 />
               </div>
