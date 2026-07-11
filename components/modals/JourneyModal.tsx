@@ -1,12 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import aboutData from "@/config/user-data/about";
-import Button from "../ui/Button";
 import Heading from "../ui/Heading";
 import ServiceCard from "../ui/ServiceCard";
-import { Sparkle } from "phosphor-react";
 import { formatText } from "@/helpers/text-helper";
 
 const JourneyModal = ({
@@ -16,96 +13,61 @@ const JourneyModal = ({
   isOpen: boolean;
   onClose: () => void;
 }) => {
-  const [data, setData] = useState({
-    education: aboutData.education || [],
-    experience: aboutData.experience,
-    hobbies: aboutData.hobbies,
-  });
-
-  useEffect(() => {
-    if (isOpen) {
-      setData({
-        education: aboutData.education || [],
-        experience: aboutData.experience,
-        hobbies: aboutData.hobbies,
-      });
-    }
-  }, [isOpen]);
-
   if (!isOpen) return null;
+
+  const education = aboutData.education || [];
+  const { experience } = aboutData;
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="My Journey">
-      {/* Grid for Experience + Education + Personal Story */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Column 1: Experience */}
-        <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-8 max-w-2xl mx-auto">
+        <div>
           <SectionHeader label="Experience" />
           <ul className="space-y-5 mt-4">
-            {data.experience.map((exp, idx) => (
+            {experience.map((exp, idx) => (
               <ExperienceItem key={idx} {...exp} />
             ))}
           </ul>
+        </div>
+
+        {education.length > 0 && (
           <div>
             <SectionHeader label="Education" />
             <ul className="space-y-4 mt-4">
-              {data.education.map((edu, idx) => (
+              {education.map((edu, idx) => (
                 <EducationItem key={idx} {...edu} />
               ))}
             </ul>
           </div>
-        </div>
+        )}
 
-        {/* Column 2: Education + Personal Story */}
-        <div className="flex flex-col gap-2">
-          {/* Personal Story on top */}
-          {aboutData.aboutMe.personalStory && (
-            <div>
-              <Heading
-                as="h5"
-                normalText="My Story"
-                className="mb-3 "
-                center={false}
-              />
-              <div className="mt-2 h-px w-full bg-linear-to-r from-primary to-transparent opacity-40 mb-2" />
+        {aboutData.aboutMe.personalStory && (
+          <div>
+            <Heading
+              as="h5"
+              normalText="My Story"
+              className="mb-3 "
+              center={false}
+            />
+            <div className="mt-2 h-px w-full bg-linear-to-r from-primary to-transparent opacity-40 mb-2" />
 
-              <ServiceCard
-                title={aboutData.aboutMe.personalStory.title}
-                description={aboutData.aboutMe.personalStory.description}
-                imageUrl={aboutData.aboutMe.personalStory.imageUrl}
-                onClick={() =>
-                  window.open(
-                    aboutData.aboutMe.personalStory!.link,
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-                className="flex-row"
-                imageWidth="w-1/2"
-                showDescriptionInMobile={true}
-              />
-            </div>
-          )}
-          {data.hobbies.length > 0 && (
-            <div className="mt-8">
-              <SectionHeader label="Hobbies" />
-              <ul className="flex flex-wrap gap-2 mt-4">
-                {data.hobbies.map((hobby, idx) => (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    key={idx}
-                    onClick={() =>
-                      hobby.link && window.open(hobby.link, "_blank")
-                    }
-                  >
-                    {hobby.label} {hobby.link && <Sparkle size={15} />}
-                  </Button>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+            <ServiceCard
+              title={aboutData.aboutMe.personalStory.title}
+              description={aboutData.aboutMe.personalStory.description}
+              imageUrl={aboutData.aboutMe.personalStory.imageUrl}
+              onClick={() =>
+                window.open(
+                  aboutData.aboutMe.personalStory!.link,
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="flex-row"
+              imageWidth="w-1/2"
+              showDescriptionInMobile={true}
+            />
+          </div>
+        )}
       </div>
     </Modal>
   );
