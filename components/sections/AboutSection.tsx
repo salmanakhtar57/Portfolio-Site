@@ -100,7 +100,7 @@ const AboutSection = forwardRef<HTMLElement, object>(
 
             <Reveal className="flex-1 mt-6 md:mt-0 flex justify-center" delay={0.15}>
               <Image
-                src={"/photo-gallery/my-picture.jpg"}
+                src={"/photo-gallery/my-picture.png"}
                 alt={`Miss kniz - Photo of ${aboutData.name}`}
                 width={400}
                 height={400}

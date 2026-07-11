@@ -40,6 +40,7 @@ export interface AboutData {
   hero: {
     headline: string;
     highlightedWords?: string[]; // Optional: words in headline to highlight
+    roles?: string[]; // Optional: rotating role titles for the typewriter greeting
     primaryCtaText: string;
     primaryCtaLink: string;
     heroPara: string;
@@ -117,6 +118,12 @@ const aboutData: AboutData = {
   hero: {
     headline: "Building Scalable Backend Systems for Modern Web Applications",
     highlightedWords: ["Scalable Backend", "Web Applications"],
+    roles: [
+      "Backend Developer",
+      "Django Developer",
+      "FastAPI Developer",
+      "Python Developer",
+    ],
     primaryCtaText: "Download Resume",
     primaryCtaLink: "/resume/Salman Akhtar - Software Engineer.pdf",
     heroPara:
