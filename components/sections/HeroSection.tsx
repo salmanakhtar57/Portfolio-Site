@@ -42,44 +42,46 @@ const HeroSection = forwardRef<HTMLElement, { portfolioForJob: boolean }>(
         <div className="container mx-auto px-2 relative z-10 my-4 md:my-8">
           <div className="flex flex-col items-center max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
             {/* Trust Badge */}
-            <Reveal delay={0.05}>
-              <SubHeadingContainer>
-                {portfolioForJob && topText ? (
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="p-1 bg-green-500 rounded-full"></span>
-                    <p className="tracking-wider">
+            {topText && (
+              <Reveal delay={0.05}>
+                <SubHeadingContainer>
+                  {portfolioForJob ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="p-1 bg-green-500 rounded-full"></span>
+                      <p className="tracking-wider">
+                        {highlightText(
+                          topText,
+                          "text-green-500",
+                          highlightsFromTopText,
+                        )}
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col items-center gap-2 relative justify-center">
+                      <span className="hidden md:inline-block py-1 px-2 rounded-full bg-white">
+                        <Star
+                          weight="fill"
+                          className="w-4 h-4 text-yellow-500"
+                        />
+                      </span>
+
+                      <Star weight="fill" className="text-yellow-500 w-5 h-5" />
+
+                      <div className="md:hidden absolute -top-5 flex text-yellow-500 text-lg">
+                        <Star weight="fill" />
+                        <Star weight="fill" />
+                      </div>
+
                       {highlightText(
                         topText,
                         "text-green-500",
                         highlightsFromTopText,
                       )}
-                    </p>
-                  </div>
-                ) : (
-                  <div className="flex flex-col items-center gap-2 relative justify-center">
-                    <span className="hidden md:inline-block py-1 px-2 rounded-full bg-white">
-                      <Star
-                        weight="fill"
-                        className="w-4 h-4 text-yellow-500"
-                      />
-                    </span>
-
-                    <Star weight="fill" className="text-yellow-500 w-5 h-5" />
-
-                    <div className="md:hidden absolute -top-5 flex text-yellow-500 text-lg">
-                      <Star weight="fill" />
-                      <Star weight="fill" />
                     </div>
-
-                    {highlightText(
-                      topText,
-                      "text-green-500",
-                      highlightsFromTopText,
-                    )}
-                  </div>
-                )}
-              </SubHeadingContainer>
-            </Reveal>
+                  )}
+                </SubHeadingContainer>
+              </Reveal>
+            )}
 
             {/* Main Headline */}
             <Reveal delay={0.16}>

@@ -2,10 +2,8 @@
 
 import Image from "next/image";
 import { forwardRef, Ref, useState } from "react";
-import { Lightbulb } from "phosphor-react";
-
 import Heading from "../ui/Heading";
-import SubHeadingContainer, { SimplePara } from "../ui/SubHeadingContainer";
+import { SimplePara } from "../ui/SubHeadingContainer";
 import Button from "../ui/Button";
 import JourneyModal from "../modals/JourneyModal";
 import aboutData from "@/config/user-data/about";
@@ -44,22 +42,6 @@ const AboutSection = forwardRef<HTMLElement, object>(
         >
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 items-center">
             <div className="flex-1">
-              <Reveal delay={0.05}>
-                <SubHeadingContainer>
-                  <div className="flex items-center gap-2 relative justify-center">
-                    <span className="inline-block py-1 px-1 rounded-full bg-white">
-                      <Lightbulb
-                        weight="fill"
-                        className="w-4 h-4 text-yellow-500"
-                      />
-                    </span>
-                    <span className="font-medium text-gray-600 uppercase tracking-wide">
-                      About Section
-                    </span>
-                  </div>
-                </SubHeadingContainer>
-              </Reveal>
-
               <Reveal delay={0.12}>
                 <Heading
                   as="h2"

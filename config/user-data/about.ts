@@ -124,7 +124,7 @@ const aboutData: AboutData = {
     // secondaryCtaText: "Book a Call",
     secondaryCtaLink: "https://calendar.app.google/fpRU2qDXNfbg4BSK8",
     heroPara:
-      "Python Backend Developer specializing in Django, REST APIs, AI, and scalable backend architecture for startups and growing products.",
+      "Python Backend Developer specializing in FastAPI, Django, DRF, AI, and scalable backend architecture for startups and growing products.",
   },
 
   // ---------- About Me Section ----------

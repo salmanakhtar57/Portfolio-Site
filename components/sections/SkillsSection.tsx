@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, Ref, forwardRef } from "react";
-import { Lightning } from "phosphor-react";
 import {
   CATEGORIES,
   Category,
@@ -10,7 +9,7 @@ import {
   SKILLS,
 } from "@/config/user-data/skills";
 import Heading from "../ui/Heading";
-import SubHeadingContainer, { SimplePara } from "../ui/SubHeadingContainer";
+import { SimplePara } from "../ui/SubHeadingContainer";
 import { capitalFirstLetter } from "@/helpers/text-helper";
 import DecorativeGlowBlobs from "../ui/DecorativeGlowBlobs";
 import { Reveal, Stagger, StaggerItem } from "../motion/Reveal";
@@ -60,23 +59,6 @@ const SkillsSection = forwardRef<HTMLElement, object>(
         {/* ── max-w-5xl centred row ─────────────────────────────────────────── */}
         <div className="relative z-10 mx-auto flex flex-col max-w-5xl items-center justify-between px-6 md:py-4">
           <div className="text-center my-2">
-            <Reveal delay={0.05}>
-              <SubHeadingContainer>
-                <div className="flex items-center gap-2 relative justify-center">
-                  <span className="inline-block py-1 px-2 rounded-full bg-white">
-                    <Lightning
-                      weight="fill"
-                      className="w-4 h-4 text-yellow-500"
-                    />
-                  </span>
-
-                  <span className="font-medium text-gray-700 uppercase tracking-wide">
-                    Skills Section
-                  </span>
-                </div>
-              </SubHeadingContainer>
-            </Reveal>
-
             <Reveal delay={0.12}>
               <Heading as="h2" normalText="What I" highlightText="Work With" />
             </Reveal>

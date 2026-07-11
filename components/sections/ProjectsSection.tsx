@@ -1,10 +1,8 @@
 "use client";
 
 import { useState, useEffect, forwardRef, Ref } from "react";
-import { Lightbulb } from "phosphor-react";
-
 import Heading from "../ui/Heading";
-import SubHeadingContainer, { SimplePara } from "../ui/SubHeadingContainer";
+import { SimplePara } from "../ui/SubHeadingContainer";
 import ProjectCard from "../ui/ProjectCard";
 import { projects, ProjectItem } from "@/config/user-data/projects";
 import Button from "../ui/Button";
@@ -59,20 +57,6 @@ const ProjectsSection = forwardRef<HTMLElement, object>(
         <div className="max-w-7xl mx-auto md:py-4 p-2">
           {/* HEADER */}
           <div className="text-center my-2">
-            <SubHeadingContainer>
-              <div className="flex items-center gap-2 justify-center">
-                <span className="inline-block py-1 px-2 rounded-full bg-white">
-                  <Lightbulb
-                    weight="fill"
-                    className="w-4 h-4 text-yellow-500"
-                  />
-                </span>
-                <span className="font-medium text-gray-700 uppercase tracking-wide">
-                  Projects Section
-                </span>
-              </div>
-            </SubHeadingContainer>
-
             <Heading
               as="h2"
               normalText="Here's My"
