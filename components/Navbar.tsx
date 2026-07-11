@@ -108,34 +108,36 @@ export default function Navbar({
             onClick={goHome}
             className="text-xl font-semibold tracking-wider font-sans"
           >
-            {aboutData?.name?.split(" ")[0] || "My Portfolio"}
+            {aboutData?.name || "My Portfolio"}
           </button>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-4">
-            {showNavLinks &&
-              navItems.map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollTo(item.toLowerCase())}
-                  className={`relative px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-px after:origin-center after:scale-x-0 after:bg-primary/40 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                    activeNav === item
-                      ? "glass-btn text-foreground border border-gray-200"
-                      : "text-foreground  font-medium hover:bg-primary-light hover:text-primary"
-                  }`}
-                >
-                  {item}
-                </button>
-              ))}
-          </nav>
-          <div className="flex items-center gap-2 md:gap-4">
-            {backToProjects && (
-              <Button onClick={goToProjects} variant="secondary">
-                <ArrowLeft size={18} weight="bold" />
-                Back <span className="hidden md:inline-block">to Projects</span>
-              </Button>
-            )}
-            <Button onClick={() => setIsContactOpen(true)}>Contact</Button>
+          <div className="flex items-center gap-6 md:gap-10">
+            {/* Navigation */}
+            <nav className="hidden md:flex space-x-4">
+              {showNavLinks &&
+                navItems.map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollTo(item.toLowerCase())}
+                    className={`relative px-4 py-2 rounded-full font-medium text-sm md:text-base transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.01] after:absolute after:left-3 after:right-3 after:-bottom-0.5 after:h-px after:origin-center after:scale-x-0 after:bg-primary/40 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                      activeNav === item
+                        ? "glass-btn text-foreground border border-gray-200"
+                        : "text-foreground  font-medium hover:bg-primary-light hover:text-primary"
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
+            </nav>
+            <div className="flex items-center gap-2 md:gap-4">
+              {backToProjects && (
+                <Button onClick={goToProjects} variant="secondary">
+                  <ArrowLeft size={18} weight="bold" />
+                  Back <span className="hidden md:inline-block">to Projects</span>
+                </Button>
+              )}
+              <Button onClick={() => setIsContactOpen(true)}>Contact</Button>
+            </div>
           </div>
         </div>
       </header>
