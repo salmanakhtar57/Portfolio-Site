@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { forwardRef, Ref, useState } from "react";
 import Heading from "../ui/Heading";
 import { SimplePara } from "../ui/SubHeadingContainer";
@@ -36,76 +35,63 @@ const AboutSection = forwardRef<HTMLElement, object>(
     return (
       <>
         <section
-          className="bg-primary-light text-[13px] py-4 md:py-8 px-4 mt-2"
+          className="bg-primary-light py-8 md:py-14 px-4 mt-2"
           id="about"
           ref={ref}
         >
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between md:gap-8 items-center">
-            <div className="flex-1">
-              <Reveal delay={0.12}>
-                <Heading
-                  as="h2"
-                  normalText={aboutMe.heading.normalText}
-                  highlightText={aboutMe.heading.highlightedText}
-                  center={false}
-                />
-              </Reveal>
+          <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+            <Reveal delay={0.12}>
+              <Heading
+                as="h2"
+                normalText={aboutMe.heading.normalText}
+                highlightText={aboutMe.heading.highlightedText}
+              />
+            </Reveal>
 
-              <Stagger className="space-y-2">
-                {aboutMe.paragraphs.map((paragraph, index) => (
-                  <StaggerItem key={index}>
-                    {renderParagraph(paragraph, index)}
+            <Stagger className="space-y-3 mt-4 text-left">
+              {aboutMe.paragraphs.map((paragraph, index) => (
+                <StaggerItem key={index}>
+                  {renderParagraph(paragraph, index)}
+                </StaggerItem>
+              ))}
+            </Stagger>
+
+            <Reveal delay={0.24}>
+              <Stagger className="flex gap-2 mt-4 flex-wrap justify-center">
+                {aboutMe.highlightedAboutRole.map((title, index) => (
+                  <StaggerItem
+                    key={index}
+                    className="text-xs font-medium px-2 py-1 rounded-md bg-black-light/10 text-primary"
+                  >
+                    {title}
                   </StaggerItem>
                 ))}
               </Stagger>
+            </Reveal>
 
-              <Reveal delay={0.24}>
-                <Stagger className="flex gap-2 mt-4 flex-wrap">
-                  {aboutMe.highlightedAboutRole.map((title, index) => (
-                    <StaggerItem
-                      key={index}
-                      className="text-xs font-medium px-2 py-1 rounded-md bg-black-light/10 text-primary"
-                    >
-                      {title}
-                    </StaggerItem>
-                  ))}
-                </Stagger>
-              </Reveal>
-
-              <Reveal delay={0.3}>
-                <div className="flex flex-wrap gap-2">
+            <Reveal delay={0.3}>
+              <div className="flex flex-wrap gap-2 justify-center">
+                <Button
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                  className="mt-2"
+                >
+                  {aboutMe.aboutCTA}
+                </Button>
+                {aboutMe.aboutSecondaryCTA && (
                   <Button
-                    onClick={() => {
-                      setIsModalOpen(true);
-                    }}
+                    variant={"secondary"}
+                    onClick={aboutMe.aboutSecondaryCTA.onClick}
                     className="mt-2"
                   >
-                    {aboutMe.aboutCTA}
+                    {aboutMe.aboutSecondaryCTA.text}{" "}
+                    <i
+                      className={`${aboutMe.aboutSecondaryCTA.icon} text-2xl align-middle`}
+                    ></i>
                   </Button>
-                  {aboutMe.aboutSecondaryCTA && (
-                    <Button
-                      variant={"secondary"}
-                      onClick={aboutMe.aboutSecondaryCTA.onClick}
-                      className="mt-2"
-                    >
-                      {aboutMe.aboutSecondaryCTA.text}{" "}
-                      <i
-                        className={`${aboutMe.aboutSecondaryCTA.icon} text-2xl align-middle`}
-                      ></i>
-                    </Button>
-                  )}
-                </div>
-              </Reveal>
-            </div>
-
-            <Reveal className="flex-1 mt-6 md:mt-0 flex justify-center" delay={0.15}>
-              <Image
-                src={"/photo-gallery/my-picture.png"}
-                alt={`Miss kniz - Photo of ${aboutData.name}`}
-                width={400}
-                height={400}
-                className="rounded-2xl shadow-xl object-cover max-w-full"
-              />
+                )}
+              </div>
             </Reveal>
           </div>
         </section>
