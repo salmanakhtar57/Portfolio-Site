@@ -5,9 +5,6 @@ import Script from "next/script";
 import { metadataSEO } from "@/config/seo";
 import { RouteTransition } from "@/components/motion/Reveal";
 
-export const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://mehak-naqvi.vercel.app/";
-
 export const metadata: Metadata = metadataSEO;
 
 export default function RootLayout({

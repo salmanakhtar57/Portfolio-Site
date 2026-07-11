@@ -1,52 +1,18 @@
-import { Notebook as NotebookIcon, SquaresFour as SquaresFourIcon } from "phosphor-react";
-
-interface CaseStudySection {
-  title: string;
-  body: string;
-}
-
-interface Architecture {
-  description: string;
-  structure: string;
-}
-
-export interface CaseStudy {
-  bgImageUrl?: string;
-  introduction?: string;
-  overview?: string;
-  overviewImage?: string;
-  architecture?: Architecture;
-  challenges?: CaseStudySection[];
-  process?: CaseStudySection[];
-  features?: CaseStudySection[];
-  featuresImage?: string;
-  outcomes?: {
-    value: string;
-    desc: string;
-  }[];
-  reflection?: string;
-}
+// Icon keys are resolved to actual components client-side (see
+// components/ui/ProjectCard.tsx) so this data file — imported by
+// server-only code like sitemap.ts — never has to load an icon library.
+export type ProjectIconKey = "notebook" | "squares-four";
 
 export interface ProjectItem {
   id: string;
   title: string;
   description: string;
-  categories: string[];
   imageUrl?: string;
-  icon?: React.ElementType;
+  icon?: ProjectIconKey;
   iconColor?: string;
   technologies: string[];
   liveUrl?: string;
   githubUrl?: string;
-  isClientProject?: boolean;
-  result?: string;
-  bgImageUrl?: string;
-  role?: string;
-  context?: string;
-  period?: string;
-  introduction?: string;
-  caseStudy?: CaseStudy;
-  previewImage?: string;
 }
 
 export const TECH_STACK = {
@@ -80,8 +46,7 @@ export const projects: ProjectItem[] = [
   {
     id: "notes-app",
     title: "Notes App",
-    categories: [],
-    icon: NotebookIcon,
+    icon: "notebook",
     iconColor: "#6366f1",
     technologies: [
       TECH_STACK.python,
@@ -96,8 +61,7 @@ export const projects: ProjectItem[] = [
   {
     id: "onespace",
     title: "OneSpace",
-    categories: [],
-    icon: SquaresFourIcon,
+    icon: "squares-four",
     iconColor: "#14b8a6",
     technologies: [TECH_STACK.python, TECH_STACK.fastapi],
     githubUrl: "https://github.com/salmanakhtar57/OneSpace",

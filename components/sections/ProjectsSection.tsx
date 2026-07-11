@@ -5,12 +5,10 @@ import Heading from "../ui/Heading";
 import ProjectCard from "../ui/ProjectCard";
 import { projects } from "@/config/user-data/projects";
 import Button from "../ui/Button";
-import Loader from "../ui/Loader";
 
 const ProjectsSection = forwardRef<HTMLElement, object>(
   (props, ref: Ref<HTMLElement>) => {
     const [showAll, setShowAll] = useState(false);
-    const [isNavigating, setIsNavigating] = useState(false);
 
     // client-only responsive state (safe)
     const [windowWidth, setWindowWidth] = useState<number | null>(null);
@@ -49,8 +47,6 @@ const ProjectsSection = forwardRef<HTMLElement, object>(
             />
           </div>
 
-          {isNavigating && <Loader />}
-
           {/* PROJECT GRID */}
           <div className="flex flex-wrap justify-center gap-8">
             {filteredProjects.map((project, index) => {
@@ -61,10 +57,7 @@ const ProjectsSection = forwardRef<HTMLElement, object>(
                   key={project.id}
                   className={`w-full sm:w-[340px] ${isHidden ? "sr-only" : "block"}`} // sr-only keeps it in DOM but invisible
                 >
-                  <ProjectCard
-                    {...project}
-                    onNavigate={() => setIsNavigating(true)}
-                  />
+                  <ProjectCard {...project} />
                 </div>
               );
             })}
