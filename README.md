@@ -41,8 +41,14 @@ The following changes were made to the original template:
 - **Content & Data** — Replaced all placeholder content with my own: bio, experience, education, projects, skills, and contact info
 - **Resume Download** — Replaced the Google Drive resume link with a locally hosted PDF for direct download (no third-party dependency)
 - **TypeScript Fixes** — Made optional fields (`secondaryCtaText`, `highlightsFromTopText`) properly typed to prevent build errors when those fields are unused
-- **Hero Section** — Updated headline, tagline, and CTA buttons to reflect my backend engineering background
-- **Projects** — Project part is pending, and not updated yet.
+- **Hero Section** — Redesigned as a "Hi, I'm Salman" greeting with a typewriter effect cycling through my roles (Backend/Django/FastAPI/Python Developer), a circular profile photo, and a full-viewport layout so the About section only appears on scroll
+- **About Section** — Simplified to a single centered column (photo removed) for better readability
+- **Skills Section** — Replaced the original frontend-leaning stack with my actual stack: Django, DRF, FastAPI, Flask, Node.js, Python, JavaScript, plus new Database (PostgreSQL, MongoDB, MySQL, SQLite) and AI (Agentic AI, Chatbots, LangChain) categories
+- **Projects** — Replaced all sample/template projects with my own: [Notes App](https://github.com/salmanakhtar57/Notes-App) and [OneSpace](https://github.com/salmanakhtar57/OneSpace), shown as icon-based cards linking directly to GitHub (no case-study pages yet); removed the category filter since it no longer applies
+- **Contact Section** — Removed the "Book a Call" Calendly button (was linked to the original author's calendar)
+- **Navbar** — Shows my full name, nav links grouped next to the Contact button, and a light/dark theme toggle
+- **Theme** — Site now always defaults to light mode for new visitors (previously followed OS/browser preference); dark mode is available via the navbar toggle and remembered across visits
+- **SEO Metadata** — Title, description, keywords, and Open Graph tags updated to reflect me and my stack instead of the original author (see note in [Deployment Status](#deployment-status) about the URLs still in there)
 - **Social Links** — Updated all social links to my profiles (LinkedIn, GitHub, Medium, Twitter, Instagram)
 
 ---
@@ -51,11 +57,10 @@ The following changes were made to the original template:
 
 These features are part of the original template:
 
-- **Theme Adaptive** — Automatically switches between dark and light mode based on device theme
-- **Hero Section** — Availability indicator, animated heading, and quick work showcase
+- **Hero Section** — Animated heading and quick work showcase
 - **Navbar** — Configurable links for job seekers or freelancers
-- **About Section** — Image, role highlights, and a "View My Story" journey modal
-- **Projects Section** — Category filters, expandable project list, and case study pages
+- **About Section** — Role highlights and a "View My Story" journey modal
+- **Projects Section** — Expandable project list and case study pages
 - **Skills Section** — Interactive universe-style animation with skill logos
 - **Service Section** — Toggleable between Skills and Services view
 - **Contact Section** — Email, location, social icons, and a contact form
@@ -67,12 +72,14 @@ These features are part of the original template:
 
 | Item         | Status            |
 |--------------|-------------------|
-| Live Demo    | Coming soon       |
+| Live Demo    | Not deployed yet  |
 | Hosting      | Not configured yet |
 | Domain       | Not set up yet    |
 | CI/CD        | Not configured yet |
 
 > Deployment will be set up on Vercel. This section will be updated once live.
+>
+> **Note:** Until this is deployed, `config/seo.ts` and the structured-data block in `app/layout.tsx` still point to the original template's URL (`mehak-naqvi.vercel.app`) for the canonical link, Open Graph URL, and preview image — these are placeholders to be swapped for my own domain and photo once deployed.
 
 ---
 

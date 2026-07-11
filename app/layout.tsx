@@ -36,27 +36,27 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Mehak Fatima Naqvi",
-              alternateName: "miss-kniz",
+              name: "Salman AKhtar",
+              alternateName: "salman-akhtar",
               url: "https://mehak-naqvi.vercel.app",
               image:
                 "https://mehak-naqvi.vercel.app/photo-gallery/portfolio.jpg",
-              jobTitle: "Full-Stack Developer",
+              jobTitle: "Backend Engineer",
               worksFor: {
                 "@type": "Organization",
-                name: "ThinkBuildSol",
+                name: "WanderCode",
               },
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Faisalabad",
+                addressLocality: "Lahore",
                 addressCountry: "PK",
               },
               sameAs: [
-                "https://www.linkedin.com/in/miss-kniz",
-                "https://github.com/miss-kniz",
+                "https://www.linkedin.com/in/salman-akhtar-09a210198/",
+                "https://github.com/salmanakhtar57",
               ],
               description:
-                "Full-stack developer specializing in PostgreSQL, Express, React, and Next.js (PERN stack).",
+                "Backend developer specializing in Python, Django, FastAPI, PostgreSQL, and RESTful APIs.",
             }),
           }}
         />
