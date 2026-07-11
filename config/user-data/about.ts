@@ -178,7 +178,7 @@ const aboutData: AboutData = {
       company: "Get AI Chatbots - Lahore, Pakistan",
       description:
         "Developed AI-powered chatbot solutions, implemented RESTful APIs, and integrated LangChain for advanced conversational AI capabilities.",
-      period: "Nov 2024 - Dec 2024",
+      period: "Dec 2023 - Nov 2024",
     },
   ],
   // ---------- Education ----------
