@@ -72,14 +72,12 @@ These features are part of the original template:
 
 | Item         | Status            |
 |--------------|-------------------|
-| Live Demo    | Not deployed yet  |
-| Hosting      | Not configured yet |
-| Domain       | Not set up yet    |
-| CI/CD        | Not configured yet |
+| Live Demo    | [salman-akhtar.vercel.app](https://salman-akhtar.vercel.app/) |
+| Hosting      | Vercel            |
+| Domain       | Vercel-provided subdomain |
+| CI/CD        | Automatic deploys via Vercel on push |
 
-> Deployment will be set up on Vercel. This section will be updated once live.
->
-> **Note:** Until this is deployed, `config/seo.ts` and the structured-data block in `app/layout.tsx` still point to the original template's URL (`mehak-naqvi.vercel.app`) for the canonical link, Open Graph URL, and preview image — these are placeholders to be swapped for my own domain and photo once deployed.
+> `config/seo.ts`, the structured-data block in `app/layout.tsx`, and `lib/site.ts`'s `BASE_URL` fallback now all point to `https://salman-akhtar.vercel.app/` — canonical link, Open Graph URL, and preview image all reference my own domain and photo instead of the original template's.
 
 ---
 

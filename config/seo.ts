@@ -19,17 +19,17 @@ export const metadataSEO: Metadata = {
     "Scalable API Developer",
   ],
   alternates: {
-    canonical: "https://mehak-naqvi.vercel.app",
+    canonical: "https://salman-akhtar.vercel.app",
   },
   openGraph: {
     title: "Salman Akhtar Portfolio",
     description:
       "Python Backend Engineer specializing in Django, FastAPI, DRF, and scalable backend architecture.",
-    url: "https://mehak-naqvi.vercel.app",
+    url: "https://salman-akhtar.vercel.app",
     siteName: "Salman Akhtar Portfolio",
     images: [
       {
-        url: "https://mehak-naqvi.vercel.app/photo-gallery/portfolio.jpg",
+        url: "https://salman-akhtar.vercel.app/photo-gallery/my-picture.png",
         width: 1200,
         height: 630,
         alt: "Salman Akhtar - Backend Engineer",

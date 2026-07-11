@@ -1,2 +1,2 @@
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://mehak-naqvi.vercel.app/";
+  process.env.NEXT_PUBLIC_BASE_URL || "https://salman-akhtar.vercel.app/";

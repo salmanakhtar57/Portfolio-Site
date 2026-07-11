@@ -35,9 +35,9 @@ export default function RootLayout({
               "@type": "Person",
               name: "Salman AKhtar",
               alternateName: "salman-akhtar",
-              url: "https://mehak-naqvi.vercel.app",
+              url: "https://salman-akhtar.vercel.app",
               image:
-                "https://mehak-naqvi.vercel.app/photo-gallery/portfolio.jpg",
+                "https://salman-akhtar.vercel.app/photo-gallery/my-picture.png",
               jobTitle: "Backend Engineer",
               worksFor: {
                 "@type": "Organization",
